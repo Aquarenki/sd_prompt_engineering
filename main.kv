@@ -1,0 +1,16 @@
+<MainWindow>
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+
+        Label:
+            text: "Enter prompt..."
+        TextInput:
+            id: prompt_start
+            multiline: True
+        Button:
+            text: "Create"
+            on_press: root.on_button_create()
+        TextInput:
+            id: prompt_new
+            multiline: True
