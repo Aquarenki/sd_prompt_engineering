@@ -1,10 +1,10 @@
 import random
 
 class Prompt:
-    def __init__(self, text):
+    def __init__(self, text, weighted, randomize):
         self.text = text
-        self.randomize = True
-        self.weighted = True
+        self.randomize = randomize
+        self.weighted = weighted
 
     def get_tokens(self, prompt):
         tokens_raw = prompt.split(",")

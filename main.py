@@ -16,7 +16,10 @@ class MainWindow(Widget):
         super(MainWindow, self).__init__(**kwargs)
 
     def on_button_create(self):
-        prompt = Prompt(self.ids.prompt_start.text)
+        prompt = Prompt(
+            text=self.ids.prompt_start.text,
+            weighted=self.ids.checkbox_weighted.active,
+            randomize=self.ids.checkbox_randomized.active)
         self.ids.prompt_new.text = prompt.create_prompt()
 
 

@@ -5,12 +5,39 @@
 
         Label:
             text: "Enter prompt..."
+
         TextInput:
             id: prompt_start
             multiline: True
-        Button:
-            text: "Create"
-            on_press: root.on_button_create()
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                BoxLayout:
+                    orientation: 'horizontal'
+
+                    Label:
+                        text: "Weighted"
+                    CheckBox:
+                        id: checkbox_weighted
+                        active: True
+
+                BoxLayout:
+                    orientation: 'horizontal'
+
+                    Label:
+                        text: "Randomized"
+                    CheckBox:
+                        id: checkbox_randomized
+                        active: True
+
+            Button:
+                text: "Create"
+                on_press: root.on_button_create()
+
         TextInput:
             id: prompt_new
             multiline: True
