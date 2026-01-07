@@ -8,3 +8,11 @@ This made a nice little project.
 A Python Kivy app which takes a prompt as input, and generates alternative prompts based on the original tokens.
 
 Extra features might be added later...
+
+## Usage 
+
+Clone repo.
+Install kivy and run `main.py`.
+
+    $ python3 -m pip install kivy
+    $ python3 main.py

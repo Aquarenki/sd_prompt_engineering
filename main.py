@@ -5,6 +5,7 @@ kivy.require('2.3.1')
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.lang import Builder
+from kivy.core.clipboard import Clipboard
 
 from prompt import Prompt
 
@@ -21,6 +22,9 @@ class MainWindow(Widget):
             weighted=self.ids.checkbox_weighted.active,
             randomize=self.ids.checkbox_randomized.active)
         self.ids.prompt_new.text = prompt.create_prompt()
+
+    def on_button_copy(self):
+        Clipboard.copy(self.ids.prompt_new.text)
 
 
 class MyApp(App):

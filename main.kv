@@ -2,13 +2,16 @@
     BoxLayout:
         orientation: 'vertical'
         size: root.width, root.height
+        padding: 10
+        spacing: 10
 
         Label:
-            text: "Enter prompt..."
+            text: "Enter a prompt. Separate tokens with a comma."
 
         TextInput:
             id: prompt_start
             multiline: True
+            hint_text: "Enter, a, prompt, here"
 
         BoxLayout:
             orientation: 'horizontal'
@@ -37,6 +40,10 @@
             Button:
                 text: "Create"
                 on_press: root.on_button_create()
+
+            Button:
+                text: "Copy to clipboard"
+                on_press: root.on_button_copy()
 
         TextInput:
             id: prompt_new
