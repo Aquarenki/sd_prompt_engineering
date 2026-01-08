@@ -1,12 +1,19 @@
-<MainWindow>
+<HomeScreen>
     BoxLayout:
         orientation: 'vertical'
         size: root.width, root.height
         padding: 10
         spacing: 10
 
-        Label:
-            text: "Enter a prompt. Separate tokens with a comma."
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            Label:
+                text: "Prompting"
+            Button:
+                text: "Settings"
+                on_press: root.manager.current = 'settings'
 
         TextInput:
             id: prompt_start
@@ -48,3 +55,18 @@
         TextInput:
             id: prompt_new
             multiline: True
+
+<SettingsScreen>
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+        padding: 10
+        spacing: 10
+
+        BoxLayout:
+            orientation: 'horizontal'
+            Label:
+                text: "Settings"
+            Button:
+                text: "Home"
+                on_press: root.manager.current = 'home'
