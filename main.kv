@@ -1,19 +1,26 @@
+WindowManager:
+    HomeScreen:
+    SettingsScreen:
+
 <HomeScreen>
+    name: "home"
+
     BoxLayout:
         orientation: 'vertical'
         size: root.width, root.height
         padding: 10
         spacing: 10
 
-
-
         BoxLayout:
             orientation: 'horizontal'
+            size_hint: (1, 0.25)
             Label:
                 text: "Prompting"
             Button:
                 text: "Settings"
-                on_press: root.manager.current = 'settings'
+                on_press:
+                    root.manager.current = 'settings'
+                    root.manager.transition.direction = 'left'
 
         TextInput:
             id: prompt_start
@@ -22,27 +29,7 @@
 
         BoxLayout:
             orientation: 'horizontal'
-
-            BoxLayout:
-                orientation: 'vertical'
-
-                BoxLayout:
-                    orientation: 'horizontal'
-
-                    Label:
-                        text: "Weighted"
-                    CheckBox:
-                        id: checkbox_weighted
-                        active: True
-
-                BoxLayout:
-                    orientation: 'horizontal'
-
-                    Label:
-                        text: "Randomized"
-                    CheckBox:
-                        id: checkbox_randomized
-                        active: True
+            size_hint: (1, 0.25)
 
             Button:
                 text: "Create"
@@ -57,6 +44,11 @@
             multiline: True
 
 <SettingsScreen>
+    name: "settings"
+
+    chk_weighted: chk_weighted
+    chk_randomized: chk_randomized
+
     BoxLayout:
         orientation: 'vertical'
         size: root.width, root.height
@@ -69,4 +61,30 @@
                 text: "Settings"
             Button:
                 text: "Home"
-                on_press: root.manager.current = 'home'
+                on_press:
+                    root.manager.current = 'home'
+                    root.manager.transition.direction = 'right'
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                BoxLayout:
+                    orientation: 'horizontal'
+
+                    Label:
+                        text: "Weighted"
+                    CheckBox:
+                        id: chk_weighted
+                        active: True
+
+                BoxLayout:
+                    orientation: 'horizontal'
+
+                    Label:
+                        text: "Randomized"
+                    CheckBox:
+                        id: chk_randomized
+                        active: True
