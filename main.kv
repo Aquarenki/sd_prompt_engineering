@@ -32,6 +32,10 @@ WindowManager:
             size_hint: (1, 0.25)
 
             Button:
+                text: "Clear"
+                on_release: root.on_button_clear()
+
+            Button:
                 text: "Create"
                 on_press: root.on_button_create()
 

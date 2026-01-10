@@ -11,6 +11,10 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from prompt import Prompt
 
 class HomeScreen(Screen):
+    def on_button_clear(self):
+        self.ids.prompt_start.text = ''
+        self.ids.prompt_new.text = ''
+
     def on_button_create(self):
         weighted_value = self.manager.get_screen('settings').ids.chk_weighted.active
         randomized_value = self.manager.get_screen('settings').ids.chk_randomized.active
