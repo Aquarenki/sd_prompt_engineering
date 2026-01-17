@@ -1,5 +1,7 @@
 # SD Prompt Engineering
 
+Version: 0.1.0
+
 When working with Stable Diffusion models, I like to experiment with prompts. For example, using the same prompt tokens, but in a different (or random) order. Or with (random) different weights.
 
 Next to that, I wanted to learn the Python Kivy GUI framework.
@@ -16,3 +18,11 @@ Install kivy and run `main.py`.
 
     $ python3 -m pip install kivy
     $ python3 main.py
+
+## Build Android APK
+
+    $ buildozer android debug
+
+Clean up
+
+    $ buildozer appclean
